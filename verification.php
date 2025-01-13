@@ -5,9 +5,10 @@ function redirect($message, $page=null)
     $url = "index.php";
     if($page)
     {
-        $url .= "articles.php";
+        $url = "articles.php";
     }
     header("Location: $url?message=$message");
+    exit;
 }
 
 $users = [
@@ -32,4 +33,5 @@ if(isset($users[$username])) {
 $hashedPassword = md5($unEncryptedPassword);
 $users[$username] = $hashedPassword;
 
+redirect("Articles", "articles.php");
 

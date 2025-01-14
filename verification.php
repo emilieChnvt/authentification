@@ -10,7 +10,6 @@ function redirect($message, $page=null)
     header("Location: $url?message=$message");
     exit;
 }
-
 $users = [
     "luc"=> "53f8a9f698d7d2ea9c8a3a6c8d5ab698",
     "michel"=> "945e9f0b4e381b13aa70b94b89a28709",
@@ -20,7 +19,6 @@ $users = [
 // si username ou password vide
 if(empty($_POST['username']) || empty($_POST['password'])) {
     redirect("empty username or password");
-
 }
 $username = $_POST['username'];
 $unEncryptedPassword = $_POST['password'];
